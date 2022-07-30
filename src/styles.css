@@ -1,0 +1,276 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+article>*+* {
+    margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+
+body {
+    background-color: #F3F7FA;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 754px;
+    min-height: 800px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header-img {
+    margin-top: 44px;
+    margin-bottom: 44px;
+}
+
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter {
+    width: 232px;
+    height: 252px;
+    background-color: #fff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 0;
+    margin: 0;
+    width: 167px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    align-items: center;
+    line-height: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #4A4A4A;
+
+    background-color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn:first-child {
+    border-radius: 5px 0 0 5px;
+    border-right: 0.5px solid #DFE5EC;
+}
+
+.btn:nth-child(3) {
+    border-radius: 0 5px 5px 0;
+    border-left: 0.5px solid #DFE5EC;
+}
+
+.main-content {
+    width: 502px;
+}
+
+.sorters {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid #DFE5EC;
+    border-radius: 5px;
+}
+
+.ticket {
+    margin-top: 20px;
+    height: 184px;
+    background-color: #fff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.active {
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+}
+
+.filter-text {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4A4A4A;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+span {
+    display: block;
+    text-align: center;
+}
+
+
+.filter-check {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    height: 40px;
+}
+
+input {
+    display: none;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #4A4A4A;
+    cursor: pointer;
+    line-height: 10px;
+    padding: 1px 0;
+    vertical-align: middle;
+}
+
+label:before {
+    content: " ";
+    color: #2196F3;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #9ABBCE;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+input:checked+label:before {
+    border: 1px solid #2196F3;
+    background: url('img/Shape.svg') center no-repeat;
+}
+
+input:hover {
+    border: 1px solid #2196F3;
+}
+
+.filter-check:hover {
+    background: #F1FCFF;
+}
+
+.ticket-wrapper {
+    margin: 0 20px 0 20px;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    height: 76px;
+    align-items: center;
+}
+
+.ticket-price {
+    font-weight: 600;
+    font-size: 24px;
+    color: #2196F3;
+}
+
+.ticket-content {
+    margin-top: 10px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 141px 141px 140px;
+}
+
+.part-name {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #A0B0B9;
+}
+
+.part-info {
+    font-weight: 600;
+    font-size: 14px;
+    color: #4A4A4A;
+}
+
+.button-more {
+    display: block;
+    margin-top: 20px;
+    width: 502px;
+    height: 50px;
+    color: #fff;
+    background-color: #2196F3;
+    border-radius: 5px;
+}
