@@ -13,6 +13,7 @@ try {
     console.log(error.message);
 }
 
+// получение билетов, отсортированных по возрастанию цены
 async function getTickets() {
     let options = {
         method: "GET",
@@ -31,6 +32,7 @@ async function getTickets() {
     return tickets;
 }
 
+// сортировка билетов, по выбранному параметру
 async function getSortedTickets() {
     let tickets = await getTickets();
     let filteredTickets = [];
@@ -47,7 +49,7 @@ async function getSortedTickets() {
     renderTickets(filteredTickets);
 }
 
-
+// фильтрация билетов по количеству пересадок
 function filterTickets(tickets) {
     let filteredTickets = [];
     if (all.checked) {
@@ -86,6 +88,7 @@ function filterTickets(tickets) {
     return filteredTickets;
 }
 
+// отрисовка билетов
 function renderTickets(tickets) {
     try {
         var myNode = document.querySelector('.tickets');
@@ -102,6 +105,7 @@ function renderTickets(tickets) {
     }
 }
 
+// формирование html кода билета
 function getTicketMarkup(ticket) {
     return `<div class="ticket-wrapper">
     <div class="ticket-header">
@@ -148,11 +152,13 @@ function getTicketMarkup(ticket) {
             `;
 }
 
+// формирование строки цены
 function getPriceString(price) {
     price = price.toString();
     return `${price.substr(0, 2)} ${price.substr(2, 5)}  Р`
 }
 
+// получение длительности полета
 function getDuration(duration) {
     const dHours = Math.floor((Number(duration) / 60));
     const dMin = Number(duration) - (dHours * 60);
@@ -160,6 +166,7 @@ function getDuration(duration) {
     return durationText;
 }
 
+// получение даты
 function getDate(date, duration) {
     var startDate = new Date(date);
     var endDate = new Date(date);
@@ -168,6 +175,7 @@ function getDate(date, duration) {
     return `${getTime(startDate)} - ${getTime(endDate)}`;
 }
 
+// получение времени
 function getTime(date) {
     var hoursString = "";
     var minutesString = "";
@@ -187,6 +195,7 @@ function getTime(date) {
     return `${hoursString}:${minutesString}`;
 }
 
+// получение пересадок
 function getStops(stops) {
     if (stops.length === 0) {
         return "Без пересадок";
@@ -197,10 +206,13 @@ function getStops(stops) {
     }
 }
 
-
+// получение длительности полета для билета полностью
 function getTicketDuration(ticket) {
     return ticket.segments[0].duration + ticket.segments[1].duration;
 }
+
+
+// далее логика работы кнопок и чек-бокса
 
 
 let sortByPriceButton = document.getElementById("sort_by_price");
